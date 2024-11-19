@@ -55,6 +55,11 @@ fun DiceRollerApp() {
 
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
+     /*
+     Composables are stateless by default, which means that they don't hold a value and can be recomposed any time by the system,
+     which results in the value being reset. However, Compose provides a convenient way to avoid this.
+     Composable functions can store an object in memory using the remember composable.
+     */
     var result by remember { mutableStateOf(1) }
     val imageResource = when (result){
         1 -> R.drawable.dice_1
